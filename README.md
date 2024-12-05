@@ -1,99 +1,108 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# NestJS API: Authentication and Product Management
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This project is a backend API built with NestJS and MongoDB. It implements user authentication with JWT and role-based access control (Admin/User). The API supports CRUD operations for products, with specific access control for Admin and User roles.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+## Features
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- User registration and login with JWT-based authentication.
+- Role-based access control (Admin/User) using Guards.
+- CRUD operations for products:
+  - Admin: Full access (create, retrieve, update, delete).
+  - User: Limited access (create, retrieve, update).
+- Validation Pipes for data validation.
+- MongoDB integration using Mongoose.
 
-## Project setup
+---
 
-```bash
-$ npm install
-```
+## Technologies Used
 
-## Compile and run the project
+- **NestJS**: Framework for building scalable server-side applications.
+- **MongoDB**: NoSQL database for data storage.
+- **Mongoose**: Object Data Modeling (ODM) library for MongoDB.
+- **JWT**: For authentication and authorization.
 
-```bash
-# development
-$ npm run start
+---
 
-# watch mode
-$ npm run start:dev
+## Setup and Installation
 
-# production mode
-$ npm run start:prod
-```
+### Prerequisites
+- **Node.js**: Install from [Node.js Official Website](https://nodejs.org/)
+- **MongoDB**: Install and run MongoDB locally or use a cloud MongoDB service like [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+- **Postman**: For testing the API endpoints.
 
-## Run tests
+---
 
-```bash
-# unit tests
-$ npm run test
+### Steps to Run Locally
 
-# e2e tests
-$ npm run test:e2e
+1. **Clone the Repository**
 
-# test coverage
-$ npm run test:cov
-```
+   git clone https://github.com/yossifdiaa/nestjs-product-api.git
+   cd nestjs-product-api
 
-## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+2. **Install Dependencies**
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+  npm install
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+3. **Set Environment Variable**
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+  Create a .env file in the root directory like .env.example file
+ 
 
-## Resources
+3. **Run the Application**
 
-Check out a few resources that may come in handy when working with NestJS:
+  npm run start:dev
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
 
-## Support
+### API Endpoints
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+1. **authentication**
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- POST "/auth/register": Register a new user.
+-POST "/auth/login": Log in to receive a JWT token.
 
-## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+2. **Product Management**
+
+
+-POST /products: Create a product (Admin/User).
+-GET /products: Retrieve all products (Admin/User).
+-GET /products/:id: Retrieve a product by ID (Admin/User).
+-PATCH /products/:id: Update a product (Admin/User).
+-DELETE /products/:id: Delete a product (Admin only).
+
+
+
+
+### Notes
+
+-The application includes error handling for invalid data and unauthorized access.
+
+-Ensure MongoDB is running before starting the application.
+
+-Use the JWT token in the Authorization header for protected routes.
+
+
+
+## Postman Collection
+
+To test the API endpoints, you can use the provided Postman collection:
+
+1. Download the Postman collection from the [docs/postman-collection.json](./docs/API_Testing_Collection.postman_collection.json) file.
+2. Open Postman and go to **File > Import**.
+3. Select the downloaded `API_Testing_Collection.postman_collection.json` file.
+4. The collection will be imported, and you can start testing the endpoints.
+
+
+## Before testing endpoints that require authorization:
+
+1. Use the /auth/login endpoint to log in with your credentials.
+2. Copy the JWT token provided in the login response.
+3. In Postman, go to the "Authorization" tab for the specific request.
+4. Select Bearer Token and paste the JWT token in the provided field.
+
+
+
